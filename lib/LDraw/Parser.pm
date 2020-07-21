@@ -68,7 +68,7 @@ sub parse {
 
 sub parse_file {
     my ( $self, $file ) = @_;
-    open( my $fh, '<', $file ) || die "$file: $!";
+    open( my $fh, '<:encoding(UTF-8)', $file ) || die "$file: $!";
     $self->parse_handle( $fh );
     close $fh;
 }
