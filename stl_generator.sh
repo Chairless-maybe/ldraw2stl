@@ -1,0 +1,1 @@
+for filename in $(ls ../ldraw/parts | grep -Eo "[^/]*.dat" | grep -Eo "^[^\.]*") do; bin/dat2stl --file ../ldraw/parts/$filename.dat --ldrawdir ../ldraw --scale 1 > ./stls/$filename.stl; echo $filename; done
